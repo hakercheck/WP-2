@@ -34,7 +34,7 @@ app.use('/api/vendorDisplay', vendorDisplayRoutes);
 app.use('/api/vendorSelect', vendorSelectRoutes);
 app.use('/api/order', OrderRoutes);
 
-/*if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
@@ -45,10 +45,7 @@ app.use('/api/order', OrderRoutes);
   app.get('/', (req, res) => {
     res.send('API is running....');
   });
-}*/
-app.get('/', (req, res) => {
-  res.send('API is running....');
-});
+}
 
 app.use(notFound);
 app.use(errorHandler);
